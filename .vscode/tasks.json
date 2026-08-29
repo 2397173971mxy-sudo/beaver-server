@@ -1,0 +1,183 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "user_rpc",
+      "type": "shell",
+      "command": "cd app/user/user_rpc;  go run userrpc.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    {
+      "label": "group_rpc",
+      "type": "shell",
+      "command": "cd app/group/group_rpc;  go run grouprpc.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    
+    {
+      "label": "friend_rpc",
+      "type": "shell",
+      "command": "cd app/friend/friend_rpc;  go run friendrpc.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    {
+      "label": "chat_rpc",
+      "type": "shell",
+      "command": "cd app/chat/chat_rpc;  go run chatrpc.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    {
+      "label": "file_rpc",
+      "type": "shell",
+      "command": "cd app/file/file_rpc;  go run filerpc.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    {
+      "label": "platform_api",
+      "type": "shell",
+      "command": "cd app/platform/platform_api;  go run platform.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    {
+      "label": "emoji_api",
+      "type": "shell",
+      "command": "cd app/emoji/emoji_api;  go run emoji.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    {
+      "label": "auth_api",
+      "type": "shell",
+      "command": "cd app/auth/auth_api;  go run auth.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    {
+      "label": "file_api",
+      "type": "shell",
+      "command": "cd app/file/file_api;  go run file.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    {
+      "label": "ws_api",
+      "type": "shell",
+      "command": "cd app/ws/ws_api;  go run ws.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    {
+      "label": "chat_api",
+      "type": "shell",
+      "command": "cd app/chat/chat_api;  go run chat.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    
+    {
+      "label": "user_api",
+      "type": "shell",
+      "command": "cd app/user/user_api;  go run user.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    {
+      "label": "moment_api",
+      "type": "shell",
+      "command": "cd app/moment/moment_api;  go run moment.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    
+    {
+      "label": "file_api",
+      "type": "shell",
+      "command": "cd app/file/file_api;  go run file.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    {
+      "label": "gateway_api",
+      "type": "shell",
+      "command": "cd app/gateway/gateway_api;  go run gateway.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    {
+      "label": "friend_api",
+      "type": "shell",
+      "command": "cd app/friend/friend_api;  go run friend.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    {
+      "label": "group_api",
+      "type": "shell",
+      "command": "cd app/group/group_api;  go run group.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    {
+      "label": "datasync_api",
+      "type": "shell",
+      "command": "cd app/datasync/datasync_api;  go run datasync.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    {
+      "label": "backend_admin",
+      "type": "shell",
+      "command": "cd app/backend/backend_admin;  go run backend_admin.go",
+      "problemMatcher": [
+        "$go"
+      ]
+    },
+    {
+      "label": "启动RPC服务",
+      "type": "shell",
+      "command": "echo Running all services",
+      "dependsOn": ["user_rpc", "group_rpc", "friend_rpc", "chat_rpc", "file_rpc"],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
+    },
+    {
+      "label": "启动Api全部任务",
+      "type": "shell",
+      "command": "echo Running all services",
+      "dependsOn": ["auth_api", "user_api", "file_api","friend_api", "chat_api","ws_api","group_api","gateway_api", "emoji_api", "moment_api", "platform_api"],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
+    },
+    {
+      "label": "启动Admin全部任务",
+      "type": "shell",
+      "command": "cd app/backend/backend_admin;  go run backend_admin.go",
+      "dependsOn": ["backend_admin", "gateway_admin"],
+      "problemMatcher": []
+    }
+  ]
+}
